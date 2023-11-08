@@ -1,15 +1,8 @@
 -- [[ Basic Keymaps ]]
---
---
---
---
---
---
-
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, ',', '<Nop>', { silent = true })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -73,16 +66,13 @@ map('n', '<S-F1>', ':g/^$/d<CR>', default_opts)
 -- vim.o.pastetoggle = '<F2>'
 -- vim.keymap.set("n", "<F2>", [[<Cmd>set paste<CR><C-r>+<Cmd>set nopaste<CR>]], { noremap = true, silent = true })
 
-function toggle_stuff()
-	-- sort of a "ternary" operator in lua
-	vim.o.paste = not vim.o.paste
-end
 
 -- local map = vim.api.nvim_set_keymap
 -- local default_opts = {noremap = true, silent = true}
 
 -- map('n', '<F2>', [[<cmd>lua toggle_stuff()<CR>]], default_opts)
 map('n', '<F2>', ':set paste!<CR>', default_opts)
+map('i', '<F2>', '<C-O>:set paste!<CR>', default_opts)
 
 
 -- map('n', '<F2>', ':se paste noai<CR>', default_opts)

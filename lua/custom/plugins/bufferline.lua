@@ -1,3 +1,4 @@
+-- Показ табуляции буферов --
 return {
 	'akinsho/bufferline.nvim',
 	version = "*",
@@ -7,7 +8,7 @@ return {
 			options = {
 				close_icon = '',
 				buffer_close_icon = '',
-			},
+			}
 		}
 	end,
 }
