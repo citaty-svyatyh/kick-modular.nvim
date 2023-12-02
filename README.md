@@ -41,7 +41,7 @@ Clone kickstart.nvim:
 
 ```sh
 # on Linux and Mac
-git clone https://github.com:citaty-svyatyh/kick-modular.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/kicknvim --depth 1
+git clone https://github.com/citaty-svyatyh/kick-modular.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/kicknvim --depth 1
 ```
 
 
