@@ -3,6 +3,11 @@
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Отключаем поддежку питона, он больше не поддерживает 3.6
+vim.g.loaded_python3_provider = 0
+
+
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -39,5 +44,7 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -35,16 +35,8 @@ require('lazy').setup({
         'rafamadriz/friendly-snippets',
       },
     },
-    -- Плагин для показа всплывающего меню со всякими там командами
+    -- Плагин для показа всплывающего меню со всякими там командами через запятую , в норм. режиме
     { 'folke/which-key.nvim',  opts = {} },
-    {
-      -- Add indentation guides even on blank lines
-      'lukas-reineke/indent-blankline.nvim',
-      -- Enable `lukas-reineke/indent-blankline.nvim`
-      -- See `:help ibl`
-      main = 'ibl',
-      opts = {},
-    },
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim', opts = {} },
     -- Fuzzy Finder (files, lsp, etc)
@@ -70,7 +62,7 @@ require('lazy').setup({
     -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
     --       These are some example plugins that I've included in the kickstart repository.
     --       Uncomment any of the lines below to enable them.
-    require 'kickstart.plugins.autoformat',
+    -- require 'kickstart.plugins.autoformat',
     -- require 'kickstart.plugins.debug',
     -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
     --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping

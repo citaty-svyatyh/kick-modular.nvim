@@ -50,10 +50,9 @@ map('n', '<Space>', '<PageDown> zz', default_opts)
 map('n', '<C-Space>', '<PageUp> zz', default_opts)
 -- " Переводчик рус -> eng
 map('v', 't', '<Plug>(VTranslate)', {})
-
 -- fzf --
-map('n', '<C-a>', ':Files<CR>', default_opts)
-map('n', '<C-p>', '::Buffers<CR>', default_opts)
+map('n', '<C-a>', ':Telescope find_files<CR>', default_opts)
+map('n', '<C-p>', ':Telescope buffers<CR>', default_opts)
 
 -----------------------------------------------------------
 -- Фн. клавиши по F1 .. F12
@@ -63,27 +62,17 @@ map('n', '<F1>', ':nohl<CR>', default_opts)
 -- shift + F1 = удалить пустые строки
 map('n', '<S-F1>', ':g/^$/d<CR>', default_opts)
 -- <F2> для временной вставки из буфера, чтобы отключить авто идент
--- vim.o.pastetoggle = '<F2>'
--- vim.keymap.set("n", "<F2>", [[<Cmd>set paste<CR><C-r>+<Cmd>set nopaste<CR>]], { noremap = true, silent = true })
-
-
--- local map = vim.api.nvim_set_keymap
--- local default_opts = {noremap = true, silent = true}
-
--- map('n', '<F2>', [[<cmd>lua toggle_stuff()<CR>]], default_opts)
 map('n', '<F2>', ':set paste!<CR>', default_opts)
 map('i', '<F2>', '<C-O>:set paste!<CR>', default_opts)
-
-
--- map('n', '<F2>', ':se paste noai<CR>', default_opts)
 -- <F3> перечитать конфигурацию nvim Может не работать, если echo $TERM  xterm-256color
 map('n', '<F3>',
 	':so ~/.config/nvim/init.lua<CR>:so ~/.config/nvim/lua/plugins.lua<CR>:so ~/.config/nvim/lua/settings.lua<CR>:so ~/.config/nvim/lua/keymaps.lua<CR>',
 	{ noremap = true })
 -- <S-F3> Открыть всю nvim конфигурацию для редактирования
-map('n', '<S-F3>',
-	':e ~/.config/nvim/init.lua<CR>:e ~/.config/nvim/lua/plugins.lua<CR>:e ~/.config/nvim/lua/settings.lua<CR>:e ~/.config/nvim/lua/keymaps.lua<CR>',
-	{ noremap = true })
+-- map('n', '<S-F3>',
+-- 	':e ~/.config/nvim/init.lua<CR>:e ~/.config/nvim/lua/plugins.lua<CR>:e ~/.config/nvim/lua/settings.lua<CR>:e ~/.config/nvim/lua/keymaps.lua<CR>',
+-- 	{ noremap = true })
+map('n', '<S-F3>', ':source $MYVIMRC', { noremap = true })
 -- <F4> Поиск слова под курсором
 -- map('n', '<F4>', [[<cmd>lua require('telescope.builtin').grep_string()<cr>]], default_opts)
 map('n', '<F4>', ':Ack! <cword> --ignore-dir={static,logs,files}<CR>', { noremap = true, silent = false })
